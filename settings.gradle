@@ -1,0 +1,1 @@
+include ':aroma-core', ':aroma-kotlin', ':aroma-java-samples', 'aroma-kotlin-samples'
