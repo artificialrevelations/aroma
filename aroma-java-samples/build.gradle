@@ -15,4 +15,5 @@ android {
 
 dependencies {
     implementation project(':aroma-core')
+    testImplementation "junit:junit:4.12"
 }
