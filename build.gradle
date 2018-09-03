@@ -13,6 +13,8 @@ buildscript {
     }
 }
 
+apply from: 'dependencies.gradle'
+
 allprojects {
     group = 'io.aroma'
     version = '0.1-alpha'
