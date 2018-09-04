@@ -31,4 +31,8 @@ ext {
             dexmaker:               "com.google.dexmaker:dexmaker:${dexmakerVersion}",
             dexmakerMockito:        "com.google.dexmaker:dexmaker-mockito:${dexmakerMockitoVersion}"
     ]
+
+    aromaJavaSamplesTestDependencies = [
+            jUnit:                  "junit:junit:${jUnitVersion}"
+    ]
 }
