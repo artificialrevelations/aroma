@@ -14,7 +14,7 @@ android {
 }
 
 dependencies {
-    def aromaJavaSamplesTestDependencies = rootProject.ext.aromaCoreTestDependencies
+    def aromaJavaSamplesTestDependencies = rootProject.ext.aromaJavaSamplesTestDependencies
 
     implementation project(':aroma-core')
     testImplementation aromaJavaSamplesTestDependencies.jUnit
