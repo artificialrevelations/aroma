@@ -20,11 +20,14 @@ android {
 }
 
 dependencies {
-    api project(':aroma-core')
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    def aromaKotlinDependencies = rootProject.ext.aromaKotlinDependencies
+    def aromaKotlinTestDependencies = rootProject.ext.aromaKotlinTestDependencies
 
-    testImplementation 'junit:junit:4.12'
-    testImplementation 'org.robolectric:robolectric:4.0-alpha-3'
+    api project(':aroma-core')
+    implementation aromaKotlinDependencies.kotlinStdLib
+
+    testImplementation aromaKotlinTestDependencies.jUnit
+    testImplementation aromaKotlinTestDependencies.robolectric
 }
 repositories {
     mavenCentral()

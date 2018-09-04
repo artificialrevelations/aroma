@@ -32,6 +32,15 @@ ext {
             dexmakerMockito:        "com.google.dexmaker:dexmaker-mockito:${dexmakerMockitoVersion}"
     ]
 
+    aromaKotlinDependencies = [
+            kotlinStdLib:           "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlin_version}"
+    ]
+
+    aromaKotlinTestDependencies = [
+            jUnit:                  "junit:junit:${jUnitVersion}",
+            robolectric:            "org.robolectric:robolectric:${robolectricVersion}"
+    ]
+
     aromaJavaSamplesTestDependencies = [
             jUnit:                  "junit:junit:${jUnitVersion}"
     ]
