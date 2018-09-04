@@ -15,7 +15,11 @@ android {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    def aromaKotlinSamplesDependencies = rootProject.ext.aromaKotlinSamplesDependencies
+    def aromaKotlinSamplesTestDependencies = rootProject.ext.aromaKotlinSamplesTestDependencies
+
     implementation project(':aroma-kotlin')
-    testImplementation "junit:junit:4.12"
+    implementation aromaKotlinSamplesDependencies.kotlinStdLib
+
+    testImplementation aromaKotlinSamplesTestDependencies.jUnit
 }

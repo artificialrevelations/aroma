@@ -44,4 +44,12 @@ ext {
     aromaJavaSamplesTestDependencies = [
             jUnit:                  "junit:junit:${jUnitVersion}"
     ]
+
+    aromaKotlinSamplesDependencies = [
+            kotlinStdLib:           "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlin_version}"
+    ]
+
+    aromaKotlinSamplesTestDependencies = [
+            jUnit:                  "junit:junit:${jUnitVersion}"
+    ]
 }
