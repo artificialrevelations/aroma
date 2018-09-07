@@ -2,12 +2,14 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion '27.0.3'
+    def config = rootProject.extensions.getByName("ext")
+
+    compileSdkVersion config["androidCompileSdkVersion"]
+    buildToolsVersion config["androidBuildToolsVersion"]
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 27
+        minSdkVersion config["androidMinSdkVersion"]
+        targetSdkVersion config["androidTargetSdkVersion"]
 
         versionCode 1
         versionName '0.1-alpha'
@@ -20,11 +22,14 @@ android {
 }
 
 dependencies {
-    api project(':aroma-core')
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    def aromaKotlinDependencies = rootProject.ext.aromaKotlinDependencies
+    def aromaKotlinTestDependencies = rootProject.ext.aromaKotlinTestDependencies
 
-    testImplementation 'junit:junit:4.12'
-    testImplementation 'org.robolectric:robolectric:4.0-alpha-2'
+    api project(':aroma-core')
+    implementation aromaKotlinDependencies.kotlinStdLib
+
+    testImplementation aromaKotlinTestDependencies.jUnit
+    testImplementation aromaKotlinTestDependencies.robolectric
 }
 repositories {
     mavenCentral()

@@ -1,12 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion '27.0.3'
+    def config = rootProject.extensions.getByName("ext")
+
+    compileSdkVersion config["androidCompileSdkVersion"]
+    buildToolsVersion config["androidBuildToolsVersion"]
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 27
+        minSdkVersion config["androidMinSdkVersion"]
+        targetSdkVersion config["androidTargetSdkVersion"]
 
         versionCode 1
         versionName '0.1-alpha'
@@ -14,6 +16,8 @@ android {
 }
 
 dependencies {
+    def aromaJavaSamplesTestDependencies = rootProject.ext.aromaJavaSamplesTestDependencies
+
     implementation project(':aroma-core')
-    testImplementation "junit:junit:4.12"
+    testImplementation aromaJavaSamplesTestDependencies.jUnit
 }

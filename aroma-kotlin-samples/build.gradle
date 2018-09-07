@@ -2,12 +2,14 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion '27.0.3'
+    def config = rootProject.extensions.getByName("ext")
+
+    compileSdkVersion config["androidCompileSdkVersion"]
+    buildToolsVersion config["androidBuildToolsVersion"]
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 27
+        minSdkVersion config["androidMinSdkVersion"]
+        targetSdkVersion config["androidTargetSdkVersion"]
 
         versionCode 1
         versionName '0.1-alpha'
@@ -15,7 +17,11 @@ android {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    def aromaKotlinSamplesDependencies = rootProject.ext.aromaKotlinSamplesDependencies
+    def aromaKotlinSamplesTestDependencies = rootProject.ext.aromaKotlinSamplesTestDependencies
+
     implementation project(':aroma-kotlin')
-    testImplementation "junit:junit:4.12"
+    implementation aromaKotlinSamplesDependencies.kotlinStdLib
+
+    testImplementation aromaKotlinSamplesTestDependencies.jUnit
 }
