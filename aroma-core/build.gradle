@@ -10,8 +10,8 @@ android {
         minSdkVersion config["androidMinSdkVersion"]
         targetSdkVersion config["androidTargetSdkVersion"]
 
-        versionCode 1
-        versionName '0.1-alpha'
+        versionCode config["versionCode"]
+        versionName config["versionName"]
 
         testApplicationId 'io.aroma.core.test'
         testInstrumentationRunner 'android.test.InstrumentationTestRunner'

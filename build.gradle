@@ -14,10 +14,13 @@ buildscript {
 }
 
 apply from: 'dependencies.gradle'
+apply from: 'versions.gradle'
 
 allprojects {
+    def config = rootProject.extensions.getByName("ext")
+
     group = 'io.aroma'
-    version = '0.1-alpha'
+    version = config["versionName"]
 
     repositories {
         google()
