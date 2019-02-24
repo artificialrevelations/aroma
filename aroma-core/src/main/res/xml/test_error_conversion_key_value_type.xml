@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  Test:
+  - map tag exists
+  - multiple entries
+  - different types of conversion issues (key, value, key and value)
+  - this should cause conversion issue
+-->
+<map>
+    <!-- correct key and value -->
+    <entry key="1" value="42"/>
+    <!-- correct key only -->
+    <entry key="2" value="42a"/>
+    <entry key="3" value="42b"/>
+    <!-- correct value only -->
+    <entry key="4a" value="42"/>
+    <entry key="5a" value="42"/>
+    <!-- incorrect key and value -->
+    <entry key="6a" value="42b"/>
+</map>

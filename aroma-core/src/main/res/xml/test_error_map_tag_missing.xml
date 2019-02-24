@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!--
+  Test:
+  - map tag is missing
+-->
+<foo>
+    <entry key="foo">bar1</entry>
+    <entry key="foo">bar2</entry>
+</foo>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!--
+  Test:
+  - map tag exists
+  - map tag has known attributes
+  - map tag has unknown attributes
+-->
+<map
+    type="LINKED_HASHMAP"
+    collection="ORDERED_SET"
+    unknown="attribute"
+    not="known">
+
+    <entry key="map_tag_with">unknown</entry>
+    <entry key="map_tag_with">attributes</entry>
+</map>

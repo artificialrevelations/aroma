@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!--
+  Test:
+  - map tag exists
+  - map tag contains unknown child tags
+-->
+<map type="LINKED_HASHMAP"
+     collection="ORDERED_SET">
+
+    <uknown>child</uknown>
+    <not>known</not>
+
+    <entry key="map_with">unknown</entry>
+    <entry key="map_with">tags</entry>
+</map>

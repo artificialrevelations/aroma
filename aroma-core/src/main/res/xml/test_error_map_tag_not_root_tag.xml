@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!--
+  Test:
+  - map tag exists
+  - map tag is not the top most tag
+-->
+<foo>
+    <map type="LINKED_HASHMAP" collection="ORDERED_SET">
+
+        <entry key="foo">bar1</entry>
+        <entry key="foo">bar2</entry>
+
+        <entry key="baz" value="qux1"/>
+        <entry key="baz" value="qux2"/>
+        <entry key="baz" value="qux3"/>
+
+        <entry>
+            <key>quux</key>
+            <value>corge1</value>
+        </entry>
+        <entry>
+            <key>quux</key>
+            <value>corge2</value>
+        </entry>
+        <entry>
+            <key>quux</key>
+            <value>corge3</value>
+        </entry>
+        <entry>
+            <key>quux</key>
+            <value>corge4</value>
+        </entry>
+    </map>
+</foo>

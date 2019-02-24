@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  Test:
+  - map tag exists
+  - multiple entries
+  - each entry key is a different type (string, int, boolean)
+  - this should cause conversion issue
+-->
+<map>
+    <entry key="string" value="foo"/>
+    <entry key="42.42" value="bar"/>
+    <entry key="42" value="baz"/>
+    <entry key="false" value="key"/>
+    <entry key="false" value="converted"/>
+    <entry key="false" value="correctly"/>
+</map>

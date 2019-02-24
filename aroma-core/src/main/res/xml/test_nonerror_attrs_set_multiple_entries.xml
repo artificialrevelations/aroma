@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!--
+  Test:
+  - map tag exists
+  - map tag is using the aroma schema
+  - map tag has the type attribute set
+  - map tag has the collection attribute set
+  - there are multiple entries
+-->
+<map xmlns="https://map.core.aroma.io"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:noNamespaceSchemaLocation="aroma_map_res.xsd"
+     type="LINKED_HASHMAP"
+     collection="ORDERED_SET">
+    <entry>
+        <key>foo</key>
+        <value>bar1</value>
+    </entry>
+    <!-- There should be no issue when mixing different kinds of entry definition -->
+    <entry key="foo">bar2</entry>
+    <entry key="foo" value="bar3"/>
+
+    <entry>
+        <key>baz</key>
+        <value>qux1</value>
+    </entry>
+    <entry key="baz">qux2</entry>d
+    <entry key="baz" value="qux3"/>
+</map>

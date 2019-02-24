@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+  This file shows a reference Android ResOurce MAp xml.
+  Each valid map is composed out of a <map></map> tag pair.
+  Both <map> attributes: type and collection are optional.
+  There should be at least one <entry> element inside a <map>
+  for the definition to be valid.
+
+-->
+<map xmlns="https://map.core.aroma.io"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:noNamespaceSchemaLocation="aroma_map_res.xsd"
+     type="LINKED_HASHMAP" collection="ORDERED_SET">
+    <!--
+    Map types: HASHMAP, TREEMAP or LINKED_HASHMAP
+    Map collections: LIST, SET, ORDERED_SET
+    -->
+
+    <!--
+
+    An entry with only key as an attribute
+
+    -->
+    <entry key="foo">bar</entry>
+
+    <!--
+
+    An entry with both key and value as attributes
+
+    -->
+    <entry key="baz" value="qux"/>
+
+    <!--
+
+    An entry with key and value as separate tags
+
+    -->
+    <entry>
+        <key>quux</key>
+        <value>corge</value>
+    </entry>
+</map>

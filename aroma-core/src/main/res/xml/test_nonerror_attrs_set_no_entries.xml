@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!--
+  Test:
+  - map tag exists
+  - map tag is using the aroma schema
+  - map tag has the type attribute set
+  - map tag has the collection attribute set
+  - there are no entries
+-->
+<map xmlns="https://map.core.aroma.io"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:noNamespaceSchemaLocation="aroma_map_res.xsd"
+     type="LINKED_HASHMAP"
+     collection="ORDERED_SET">
+</map>
