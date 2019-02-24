@@ -28,7 +28,6 @@ dependencies {
     def aromaCoreTestDependencies = rootProject.ext.aromaCoreTestDependencies
 
     implementation aromaCoreDependencies.supportAnnotations
-    implementation aromaCoreDependencies.supportV4
 
     testImplementation aromaCoreTestDependencies.jUnit
     testImplementation aromaCoreTestDependencies.robolectric
