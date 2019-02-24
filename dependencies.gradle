@@ -20,7 +20,7 @@ ext {
     dexmakerMockitoVersion = '1.0'
 
     aromaCoreDependencies = [
-            supportAnnotations:     "androidx.annotation:annotation:${androidxAnnotationsVerion}"
+            androidxAnnotations:     "androidx.annotation:annotation:${androidxAnnotationsVerion}"
     ]
 
     aromaCoreTestDependencies = [

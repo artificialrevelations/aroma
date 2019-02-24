@@ -27,7 +27,7 @@ dependencies {
     def aromaCoreDependencies = rootProject.ext.aromaCoreDependencies
     def aromaCoreTestDependencies = rootProject.ext.aromaCoreTestDependencies
 
-    implementation aromaCoreDependencies.supportAnnotations
+    implementation aromaCoreDependencies.androidxAnnotations
 
     testImplementation aromaCoreTestDependencies.jUnit
     testImplementation aromaCoreTestDependencies.robolectric
