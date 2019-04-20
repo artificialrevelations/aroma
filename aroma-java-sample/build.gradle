@@ -1,0 +1,23 @@
+apply plugin: 'com.android.application'
+
+android {
+    def config = rootProject.extensions.getByName("ext")
+
+    compileSdkVersion config["androidCompileSdkVersion"]
+    buildToolsVersion config["androidBuildToolsVersion"]
+
+    defaultConfig {
+        minSdkVersion config["androidMinSdkVersion"]
+        targetSdkVersion config["androidTargetSdkVersion"]
+
+        versionCode config["versionCode"]
+        versionName config["versionName"]
+    }
+}
+
+dependencies {
+    def aromaJavaSampleTestDependencies = rootProject.ext.aromaJavaSampleTestDependencies
+
+    implementation project(':aroma-core')
+    testImplementation aromaJavaSampleTestDependencies.jUnit
+}

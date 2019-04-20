@@ -40,15 +40,15 @@ ext {
             robolectric:            "org.robolectric:robolectric:${robolectricVersion}"
     ]
 
-    aromaJavaSamplesTestDependencies = [
+    aromaJavaSampleTestDependencies = [
             jUnit:                  "junit:junit:${jUnitVersion}"
     ]
 
-    aromaKotlinSamplesDependencies = [
+    aromaKotlinSampleDependencies = [
             kotlinStdLib:           "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlin_version}"
     ]
 
-    aromaKotlinSamplesTestDependencies = [
+    aromaKotlinSampleTestDependencies = [
             jUnit:                  "junit:junit:${jUnitVersion}"
     ]
 }

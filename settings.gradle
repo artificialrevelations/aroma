@@ -1,1 +1,1 @@
-include ':aroma-core', ':aroma-kotlin', ':aroma-java-samples', 'aroma-kotlin-samples'
+include ':aroma-core', ':aroma-kotlin-ext', ':aroma-java-sample', 'aroma-kotlin-sample'
