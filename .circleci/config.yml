@@ -27,12 +27,12 @@ references:
       paths:
         - aroma-core/build/outputs/aar
         - aroma-core/build/test-results
-        - aroma-java-samples/build/outputs/apk
-        - aroma-java-samples/build/reports
-        - aroma-kotlin/build/outputs/aar
-        - aroma-kotlin/build/test-results
-        - aroma-kotlin-samples/build/outputs/apk
-        - aroma-kotlin-samples/build/reports
+        - aroma-java-sample/build/outputs/apk
+        - aroma-java-sample/build/reports
+        - aroma-kotlin-ext/build/outputs/aar
+        - aroma-kotlin-ext/build/test-results
+        - aroma-kotlin-sample/build/outputs/apk
+        - aroma-kotlin-sample/build/reports
 
   ## Docker images
   android_config: &android_config
@@ -74,7 +74,7 @@ jobs:
           destination: /aar/
 
   ## Build debug aroma-kotlin AAR
-  build_aroma_kotlin_debug:
+  build_aroma_kotlin_ext_debug:
     <<: *android_config
     steps:
       - checkout
@@ -84,18 +84,18 @@ jobs:
           command: chmod +x ./gradlew
       - run:
           name: Download dependencies
-          command: ./gradlew :aroma-kotlin:androidDependencies
+          command: ./gradlew :aroma-kotlin-ext:androidDependencies
       - *save_cache
       - run:
           name: Gradle build (debug)
-          command: ./gradlew :aroma-kotlin:assembleDebug
+          command: ./gradlew :aroma-kotlin-ext:assembleDebug
       - *persist_debug_workspace
       - store_artifacts:
           path: aroma-kotlin/build/outputs/aar/
           destination: /aar/
 
   ## Build debug aroma-java-samples APK
-  build_aroma_java_samples_debug:
+  build_aroma_java_sample_debug:
     <<: *android_config
     steps:
       - checkout
@@ -105,18 +105,18 @@ jobs:
           command: chmod +x ./gradlew
       - run:
           name: Download dependencies
-          command: ./gradlew :aroma-java-samples:androidDependencies
+          command: ./gradlew :aroma-java-sample:androidDependencies
       - *save_cache
       - run:
           name: Gradle build (debug)
-          command: ./gradlew :aroma-java-samples:assembleDebug
+          command: ./gradlew :aroma-java-sample:assembleDebug
       - *persist_debug_workspace
       - store_artifacts:
-          path: aroma-java-samples/build/outputs/apk/
+          path: aroma-java-sample/build/outputs/apk/
           destination: /apk/
 
   ## Build debug aroma-kotlin-samples APK
-  build_aroma_kotlin_samples_debug:
+  build_aroma_kotlin_sample_debug:
     <<: *android_config
     steps:
       - checkout
@@ -126,14 +126,14 @@ jobs:
           command: chmod +x ./gradlew
       - run:
           name: Download dependencies
-          command: ./gradlew :aroma-kotlin-samples:androidDependencies
+          command: ./gradlew :aroma-kotlin-sample:androidDependencies
       - *save_cache
       - run:
           name: Gradle build (debug)
-          command: ./gradlew :aroma-kotlin-samples:assembleDebug
+          command: ./gradlew :aroma-kotlin-sample:assembleDebug
       - *persist_debug_workspace
       - store_artifacts:
-          path: aroma-kotlin-samples/build/outputs/apk/
+          path: aroma-kotlin-sample/build/outputs/apk/
           destination: /apk/
 
   ## Run unit tests for aroma-core module
@@ -161,7 +161,7 @@ jobs:
           destination: /test-results/
 
   ## Run unit tests for aroma-kotlin module
-  test_aroma_kotlin_unit:
+  test_aroma_kotlin_ext_unit:
     <<: *android_config
     steps:
       - checkout
@@ -171,21 +171,21 @@ jobs:
           command: chmod +x ./gradlew
       - run:
           name: Download dependencies
-          command: ./gradlew :aroma-kotlin:androidDependencies
+          command: ./gradlew :aroma-kotlin-ext:androidDependencies
       - *save_cache
       - run:
           name: Run unit tests
-          command: ./gradlew -PciBuild=true :aroma-kotlin:testDebugUnitTest
+          command: ./gradlew -PciBuild=true :aroma-kotlin-ext:testDebugUnitTest
       - *persist_debug_workspace
       - store_artifacts:
-          path: aroma-kotlin/build/reports/
+          path: aroma-kotlin-ext/build/reports/
           destination: /reports/
       - store_test_results:
-          path: aroma-kotlin/build/test-results/
+          path: aroma-kotlin-ext/build/test-results/
           destination: /test-results/
 
   ## Run unit tests for aroma-java-samples module
-  test_aroma_java_samples_unit:
+  test_aroma_java_sample_unit:
     <<: *android_config
     steps:
       - checkout
@@ -195,21 +195,21 @@ jobs:
           command: chmod +x ./gradlew
       - run:
           name: Download dependencies
-          command: ./gradlew :aroma-java-samples:androidDependencies
+          command: ./gradlew :aroma-java-sample:androidDependencies
       - *save_cache
       - run:
           name: Run unit tests
-          command: ./gradlew -PciBuild=true :aroma-java-samples:testDebugUnitTest
+          command: ./gradlew -PciBuild=true :aroma-java-sample:testDebugUnitTest
       - *persist_debug_workspace
       - store_artifacts:
-          path: aroma-java-samples/build/reports/
+          path: aroma-java-sample/build/reports/
           destination: /reports/
       - store_test_results:
-          path: aroma-java-samples/build/test-results/
+          path: aroma-java-sample/build/test-results/
           destination: /test-results/
 
   ## Run unit tests for aroma-kotlin-samples module
-  test_aroma_kotlin_samples_unit:
+  test_aroma_kotlin_sample_unit:
     <<: *android_config
     steps:
       - checkout
@@ -219,17 +219,17 @@ jobs:
           command: chmod +x ./gradlew
       - run:
           name: Download dependencies
-          command: ./gradlew :aroma-kotlin-samples:androidDependencies
+          command: ./gradlew :aroma-kotlin-sample:androidDependencies
       - *save_cache
       - run:
           name: Run unit tests
-          command: ./gradlew -PciBuild=true :aroma-kotlin-samples:testDebugUnitTest
+          command: ./gradlew -PciBuild=true :aroma-kotlin-sample:testDebugUnitTest
       - *persist_debug_workspace
       - store_artifacts:
-          path: aroma-kotlin-samples/build/reports/
+          path: aroma-kotlin-sample/build/reports/
           destination: /reports/
       - store_test_results:
-          path: aroma-kotlin-samples/build/test-results/
+          path: aroma-kotlin-sample/build/test-results/
           destination: /test-results/
 
 workflows:
@@ -237,22 +237,22 @@ workflows:
   workflow:
     jobs:
       - build_aroma_core_debug
-      - build_aroma_kotlin_debug
-      - build_aroma_java_samples_debug:
+      - build_aroma_kotlin_ext_debug
+      - build_aroma_java_sample_debug:
           requires:
             - build_aroma_core_debug
-      - build_aroma_kotlin_samples_debug:
+      - build_aroma_kotlin_sample_debug:
           requires:
-            - build_aroma_kotlin_debug
+            - build_aroma_kotlin_ext_debug
       - test_aroma_core_unit:
           requires:
             - build_aroma_core_debug
-      - test_aroma_kotlin_unit:
+      - test_aroma_kotlin_ext_unit:
           requires:
-            - build_aroma_kotlin_debug
-      - test_aroma_java_samples_unit:
+            - build_aroma_kotlin_ext_debug
+      - test_aroma_java_sample_unit:
           requires:
-            - build_aroma_java_samples_debug
-      - test_aroma_kotlin_samples_unit:
+            - build_aroma_java_sample_debug
+      - test_aroma_kotlin_sample_unit:
           requires:
-            - build_aroma_kotlin_samples_debug
+            - build_aroma_kotlin_sample_debug
