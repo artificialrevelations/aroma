@@ -13,7 +13,7 @@ android {
         versionCode config["versionCode"]
         versionName config["versionName"]
 
-        testApplicationId 'io.aroma.core.test'
+        testApplicationId 'org.artdev.aroma.core.test'
         testInstrumentationRunner 'android.test.InstrumentationTestRunner'
     }
 

@@ -10,7 +10,6 @@ ext {
 
     // Libraries
     androidxAnnotationsVerion = '1.0.0'
-    androidSupportVersion = '27.1.1'
     dexmakerVersion = '1.0'
 
     // Testing
