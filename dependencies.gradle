@@ -10,7 +10,6 @@ ext {
 
     // Libraries
     androidxAnnotationsVerion = '1.0.0'
-    androidSupportVersion = '27.1.1'
     dexmakerVersion = '1.0'
 
     // Testing
@@ -40,15 +39,15 @@ ext {
             robolectric:            "org.robolectric:robolectric:${robolectricVersion}"
     ]
 
-    aromaJavaSamplesTestDependencies = [
+    aromaJavaSampleTestDependencies = [
             jUnit:                  "junit:junit:${jUnitVersion}"
     ]
 
-    aromaKotlinSamplesDependencies = [
+    aromaKotlinSampleDependencies = [
             kotlinStdLib:           "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlin_version}"
     ]
 
-    aromaKotlinSamplesTestDependencies = [
+    aromaKotlinSampleTestDependencies = [
             jUnit:                  "junit:junit:${jUnitVersion}"
     ]
 }

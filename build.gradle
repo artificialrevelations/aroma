@@ -19,7 +19,7 @@ apply from: 'versions.gradle'
 allprojects {
     def config = rootProject.extensions.getByName("ext")
 
-    group = 'io.aroma'
+    group = 'org.artrev.aroma'
     version = config["versionName"]
 
     repositories {
